@@ -1,21 +1,19 @@
 #!/usr/bin/bash
 
-
 printNames()
 {
 	for i in $@
 	do
-	if [ $i == ahmed ];then
-		echo $i
-	else
-		case $i in
-		 mohamed) echo 'mohameds';;
-		 samir) echo 'samirs';;
-		 esac
-	fi
+		echo $i >> ./text.txt 
 	done
 }
-printNames ahmed mohamed samir
-./node.js
 
-echo "done"
+printNames ahmed mohamed samir
+
+if which node > /dev/null
+then
+	./node.js
+else
+	echo "install node first"
+fi
+
