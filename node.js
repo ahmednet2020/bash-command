@@ -1,8 +1,10 @@
-#!/usr/bin/env node
+#! /usr/bin/env node
 
 const fs = require('fs');
 
 fs.readFile('./text.txt', 'utf8',(err, data) => {
 	console.log(data);
 });
+var x = process.env.MY_NAME;
+console.log(x);
 

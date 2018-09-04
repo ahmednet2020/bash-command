@@ -1,19 +1,20 @@
-#!/usr/bin/bash
-
-printNames()
-{
-	for i in $@
-	do
-		echo $i >> ./text.txt 
-	done
-}
-
-printNames ahmed mohamed samir
-
-if which node > /dev/null
+#! /usr/bin/bash
+# ===start code===
+# ==file check ===
+# -e if file exist
+# -d if dir exist
+#-s if file empty
+# -r -w -x for mod
+#-b for media
+#-c case
+echo -e "enter you file name \c"
+read file_name 
+if [ -s $file_name ]
 then
-	./node.js
+	echo "file is here"
 else
-	echo "install node first"
+	echo "file not here"
 fi
+
+# ===end code===
 
