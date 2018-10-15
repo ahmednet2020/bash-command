@@ -1,13 +1,14 @@
 #! /usr/bin/bash
 # ===start code===
-# === Array var syntax
-array=('ahmed' 'mohamed' 'hero')
-# === @ = print all val in array
-# echo ${array[@]}
-# === ! = print length of array
-# echo ${!array[@]}
-for i in ${array}; do
-	echo "name is $i"
+
+# === loop files in system
+ls -a | while read files; do
+	# check files name and find what you need
+	if [[ $files == *.js || $files == *.txt ]]; then
+		echo "${files}"
+	else
+		echo 'no this file'
+	fi
 done
 # ===end code===
 
