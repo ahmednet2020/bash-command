@@ -9,5 +9,10 @@ do
 	mv "$img" "$i.jpg"
 	(( i++ ))
 done
+# while 
+find *.jpg | while read x; do
+	echo "$x";
+	mv "$x" "x$i.jpg"
+done
 # ===end code===
 
