@@ -1,18 +1,27 @@
 #! /usr/bin/bash
 # ===start code===
 
-# === change name of img
-i=1;
-for img in *.jpg
+# === select loop === 
+select x in ahmed mohamed samir
 do
-	echo "$img";
-	mv "$img" "$i.jpg"
-	(( i++ ))
-done
-# while 
-find *.jpg | while read x; do
-	echo "$x";
-	mv "$x" "x$i.jpg"
+	case $x in
+		ahmed )
+			echo "ahmed"
+			break;
+			;;
+		mohamed )
+			echo "mohamed"
+			break;
+			;;
+		samir )
+			echo "samir"
+			break;
+			;;
+			*)
+			echo "no"
+			break
+			;; 
+	esac
 done
 # ===end code===
 
