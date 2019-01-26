@@ -1,27 +1,19 @@
 #! /usr/bin/bash
 # ===start code===
 
-# === select loop === 
-select x in ahmed mohamed samir
-do
-	case $x in
-		ahmed )
-			echo "ahmed"
-			break;
-			;;
-		mohamed )
-			echo "mohamed"
-			break;
-			;;
-		samir )
-			echo "samir"
-			break;
-			;;
-			*)
-			echo "no"
-			break
-			;; 
-	esac
-done
+# === function === 
+echo -n "what is img name? "
+read name
+function imgName()
+{
+	imgs=$(find *.jpg)
+	n=0
+	for i in $imgs; do
+		mv $i $1$n.jpg
+		((n++))
+	done
+}
+imgName $name
+exit
 # ===end code===
 
