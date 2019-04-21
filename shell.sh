@@ -1,19 +1,22 @@
-#! /usr/bin/bash
+#!/usr/bin/bash
 # ===start code===
 
 # === function === 
-echo -n "what is img name? "
-read name
-function imgName()
+usage()
 {
-	imgs=$(find *.jpg)
-	n=0
-	for i in $imgs; do
-		mv $i $1$n.jpg
-		((n++))
-	done
+	echo "enter your file test"
+	echo "like this" $0
 }
-imgName $name
-exit
+file_is_exits()
+{
+	local file=$1
+	[[ -f $1 ]] && return 0 || return 1
+}
+	[[ $# -eq 0 ]] && usage
+if ( file_is_exits $1 );then
+	echo "file is here"
+else 
+	echo "file not here"
+fi
 # ===end code===
 
