@@ -12,7 +12,10 @@ file_is_exits()
 	local file=$1
 	[[ -f $1 ]] && return 0 || return 1
 }
-	[[ $# -eq 0 ]] && usage
+if [[ $# -eq 0 ]];then
+	usage
+	exit
+fi
 if ( file_is_exits $1 );then
 	echo "file is here"
 else 
