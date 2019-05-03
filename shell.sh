@@ -1,25 +1,16 @@
 #!/usr/bin/bash
 # ===start code===
+trap "echo it is stop $$" 0
 
-# === function === 
-usage()
+set -x
+main()
 {
-	echo "enter your file test"
-	echo "like this" $0
+	find *.jpg | while read x;do
+		echo $x
+	done
 }
-file_is_exits()
-{
-	local file=$1
-	[[ -f $1 ]] && return 0 || return 1
-}
-if [[ $# -eq 0 ]];then
-	usage
-	exit
-fi
-if ( file_is_exits $1 );then
-	echo "file is here"
-else 
-	echo "file not here"
-fi
+set +x
+main $0
+sleep 100
 # ===end code===
 
